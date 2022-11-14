@@ -1,26 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: quicksand;
+	src: url("/fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.gradient {
+	background: rgb(17, 24, 39);
+	background: -moz-radial-gradient(circle at 20% 75%, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
+	background: -webkit-radial-gradient(circle at 20% 75%, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
+	background: radial-gradient(circle at 20% 75%, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#111827",endColorstr="#374151",GradientType=1);
 }
 
-* {
-  box-sizing: border-box;
+@layer components {
+	.filter-gray-50 {
+		filter: invert(100%) sepia(16%) saturate(619%) hue-rotate(177deg) brightness(100%) contrast(97%);
+	}
+
+	.filter-gray-300 {
+		filter: invert(94%) sepia(12%) saturate(96%) hue-rotate(177deg) brightness(89%) contrast(94%);
+	}
+
+	.filter-gray-600 {
+		filter: invert(33%) sepia(12%) saturate(613%) hue-rotate(175deg) brightness(94%) contrast(94%);
+	}
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.icon {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 80%;
 }
