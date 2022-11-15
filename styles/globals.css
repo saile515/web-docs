@@ -9,9 +9,9 @@
 
 .gradient {
 	background: rgb(17, 24, 39);
-	background: -moz-radial-gradient(circle at 20% 75%, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
-	background: -webkit-radial-gradient(circle at 20% 75%, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
-	background: radial-gradient(circle at 20% 75%, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
+	background: -moz-radial-gradient(circle at 20vw 75vh, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
+	background: -webkit-radial-gradient(circle at 20vw 75vh, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
+	background: radial-gradient(circle at 20vw 75vh, rgba(17, 24, 39, 1) 0%, rgba(44, 54, 69, 1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#111827",endColorstr="#374151",GradientType=1);
 }
 
