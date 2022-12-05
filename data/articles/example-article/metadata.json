@@ -1,0 +1,12 @@
+{
+	"title": "This is an article",
+	"topic": ["node", "ts"],
+	"tableOfContents": [
+		{
+			"title": "Section 1",
+			"content": [{ "title": "Section 1.1", "content": ["Section 1.1.1", "Section 1.1.2"] }, "Section 1.2", "Section 1.3"]
+		},
+		{ "title": "Section 2", "content": ["Section 2.1", "Section 2.2", "Section 2.3"] },
+		"Section 3"
+	]
+}

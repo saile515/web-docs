@@ -24,6 +24,10 @@
 		filter: invert(94%) sepia(12%) saturate(96%) hue-rotate(177deg) brightness(89%) contrast(94%);
 	}
 
+	.filter-gray-400 {
+		filter: invert(77%) sepia(12%) saturate(280%) hue-rotate(179deg) brightness(84%) contrast(85%);
+	}
+
 	.filter-gray-600 {
 		filter: invert(33%) sepia(12%) saturate(613%) hue-rotate(175deg) brightness(94%) contrast(94%);
 	}
