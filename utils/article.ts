@@ -6,10 +6,14 @@ export interface ArticleMetadata {
 	title: string;
 	topic: string[];
 	tableOfContents: TOCNode[];
+	keywords: string[];
+	score?: number;
 }
 
 export async function getArticleMetadata(article: string) {
-	const data = JSON.parse((await readFile(`./data/articles/${article}/metadata.json`)).toString());
+	const data = JSON.parse(
+		(await readFile(`./data/articles/${article}/metadata.json`)).toString()
+	);
 	return data as ArticleMetadata;
 }
 
