@@ -9,7 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	const query = req.query.q ? (req.query.q as string).split(" ") : undefined;
 	query?.forEach((word: string) => word.toLowerCase());
 
-	const topic = req.query.topic ? (req.query.topic as string).split(",") : undefined;
+	const topic = req.query.t ? (req.query.t as string).split(",") : undefined;
 	topic?.forEach((word: string) => word.toLowerCase());
 
 	// Read all article names.
@@ -59,5 +59,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 		}
 	});
 
-	res.status(200).end();
+	articleData.sort((a, b) => b.score! - a.score!);
+
+	res.send(articleData);
 }

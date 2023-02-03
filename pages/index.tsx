@@ -10,7 +10,7 @@ export default function Home() {
 				<h1 className="text-3xl sm:text-4xl text-white mt-32 w-9/12 max-w-xl font-title font-bold">
 					Open Source Tutorials on Web Development and Related Topics
 				</h1>
-				<SearchBar big placeholder="Search for articles..." />
+				<SearchBar big placeholder="Search for articles..." className="m-20" />
 				<button
 					className="font-title font-black text-gray-300 hover:text-gray-50 text-lg flex flex-col items-center absolute bottom-12 group transition-all hover:translate-y-1"
 					onClick={() => {
