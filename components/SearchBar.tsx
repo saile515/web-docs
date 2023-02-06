@@ -10,12 +10,19 @@ export default function SearchBar(props: {
 }) {
 	return (
 		<div
-			className={`${props.className} ${
+			className={`${
 				props.big
 					? "w-9/12 max-w-xl h-14 grid-cols-[1fr_3.5rem]"
 					: "w-32 h-8 grid-cols-[1fr_2rem]"
-			} bg-gray-200 rounded-full shadow-inner shadow-gray-500 border-b border-gray-100 grid items-center`}>
+			} bg-gray-200 rounded-full shadow-inner shadow-gray-500 border-b border-gray-100 grid items-center ${
+				props.className
+			} `}>
 			<input
+				onKeyDown={(event) => {
+					if (event.key == "Enter" && props.submit) {
+						props.submit();
+					}
+				}}
 				type="text"
 				placeholder={props.placeholder}
 				value={props.state}

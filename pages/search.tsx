@@ -1,7 +1,9 @@
 import { ArticleMetadata } from "../utils/article";
 import SearchBar from "../components/SearchBar";
-import { topics } from "../data/topics.json";
+import topicsMeta from "../data/topics.json";
 import { useState } from "react";
+
+const topics = topicsMeta.topics;
 
 function Article(props: { data: ArticleMetadata }) {
 	return (
@@ -9,7 +11,9 @@ function Article(props: { data: ArticleMetadata }) {
 			<span className="font-bold font-title text-gray-50 text-xl">{props.data.title}</span>
 			<div className="mt-2">
 				{props.data.topic.map((topic) => (
-					<span className="rounded-lg bg-gray-600 px-2 py-1 mr-1 text-gray-400">
+					<span
+						className="rounded-lg bg-gray-600 px-2 py-1 mr-1 text-gray-400"
+						key={topic}>
 						{topic}
 					</span>
 				))}
@@ -42,16 +46,45 @@ export default function Search() {
 				state={query}
 				setState={setQuery}
 				submit={handleSearch}
+				className="w-full max-w-none"
 			/>
-			<div className="flex m-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-rounded-full scrollbar-h-1 py-2">
-				{topics.map((topic) => (
-					<button
-						key={topic.id}
-						className="rounded bg-gray-600 px-2 py-1 mr-2 my-1 text-gray-200 border-l-4 flex-grow-0 whitespace-pre"
-						style={{ borderColor: topic.color }}>
-						{topic.name}
-					</button>
-				))}
+			<div className="flex my-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-rounded-full scrollbar-h-1 py-2">
+				{topic.map((id) => {
+					const item = topics.find((topic) => topic.id == id);
+					if (!item) return;
+
+					return (
+						<button
+							key={item.id}
+							className="rounded bg-gray-700 px-2 py-1 mr-2 my-1 text-gray-200 border-l-4 flex-grow-0 whitespace-pre"
+							style={{ borderColor: item.color }}
+							id={item.id}
+							onClick={(event) =>
+								setTopic((topic) => topic.filter((topic) => item.id != topic))
+							}>
+							{item.name}
+						</button>
+					);
+				})}
+				{topic.length > 0 && <span className="mr-2 border-r-2 border-gray-400"></span>}
+				{topics.map((item) => {
+					if (!topic.find((topic) => topic == item.id))
+						return (
+							<button
+								key={item.id}
+								className="rounded bg-gray-600 px-2 py-1 mr-2 my-1 text-gray-200 border-l-4 flex-grow-0 whitespace-pre"
+								style={{ borderColor: item.color }}
+								id={item.id}
+								onClick={(event) =>
+									setTopic((topic) => [
+										...topic,
+										(event.target as HTMLButtonElement).id,
+									])
+								}>
+								{item.name}
+							</button>
+						);
+				})}
 			</div>
 			{searchTime && (
 				<p className="text-gray-500">
