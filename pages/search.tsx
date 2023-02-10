@@ -1,4 +1,5 @@
 import { ArticleMetadata } from "../utils/article";
+import Link from "next/link";
 import SearchBar from "../components/SearchBar";
 import topicsMeta from "../data/topics.json";
 import { useState } from "react";
@@ -7,7 +8,9 @@ const topics = topicsMeta.topics;
 
 function Article(props: { data: ArticleMetadata }) {
 	return (
-		<div className="bg-gray-700 p-4 m-4 rounded-lg w-10/12 max-w-sm">
+		<Link
+			href={`/article/${props.data.slug}`}
+			className="bg-gray-700 p-4 m-4 rounded-lg w-10/12 max-w-sm">
 			<span className="font-bold font-title text-gray-50 text-xl">{props.data.title}</span>
 			<div className="mt-2">
 				{props.data.topic.map((topic) => (
@@ -18,7 +21,7 @@ function Article(props: { data: ArticleMetadata }) {
 					</span>
 				))}
 			</div>
-		</div>
+		</Link>
 	);
 }
 

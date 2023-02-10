@@ -7,6 +7,7 @@ export interface ArticleMetadata {
 	topic: string[];
 	tableOfContents: TOCNode[];
 	keywords: string[];
+	slug: string;
 	score?: number;
 }
 
