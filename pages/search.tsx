@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
+
 import { ArticleMetadata } from "../utils/article";
 import Link from "next/link";
 import SearchBar from "../components/SearchBar";
 import topicsMeta from "../data/topics.json";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 const topics = topicsMeta.topics;
 
@@ -26,12 +28,39 @@ function Article(props: { data: ArticleMetadata }) {
 }
 
 export default function Search() {
-	const [query, setQuery] = useState("");
+	const [query, setQuery] = useState<string>("");
 	const [topic, setTopic] = useState<string[]>([]);
 	const [searchTime, setSearchTime] = useState<number>();
 	const [articles, setArticles] = useState<ArticleMetadata[]>();
+	const router = useRouter();
+	const [initialSearch, setInitialSearch] = useState(false);
+
+	useEffect(() => {
+		if (!router) return;
+
+		if (!topic.length && router.query.t) {
+			setTopic((router.query.t as string).split(","));
+		}
+
+		if (router.query.q && query == "") {
+			setQuery(router.query.q as string);
+		}
+	}, [router]);
+
+	useEffect(() => {
+		if (!initialSearch && (topic.length || query != "")) {
+			handleSearch();
+			setInitialSearch(true);
+		}
+	}, [topic, query]);
 
 	function handleSearch() {
+		if (router) {
+			router.query.q = query;
+			router.query.t = topic.toString();
+			router.push(router);
+		}
+
 		const startTime = performance.now();
 		fetch(`/api/search?q=${query}&t=${topic.toString()}`)
 			.then((res) => res.json())
