@@ -15,7 +15,7 @@ export default function Article(props: InferGetStaticPropsType<typeof getStaticP
 	return (
 		<div className="bg-gray-800">
 			<Nav />
-			<div className="grid grid-cols-[1fr_2fr_1fr] mt-12 p-12 pt-24">
+			<div className="grid sm:grid-cols-[1fr_2fr_1fr] mt-12 p-12 pt-24">
 				<div></div>
 				<article id={style.article} dangerouslySetInnerHTML={{ __html: content }}></article>
 				<TableOfContents data={props.metadata} />

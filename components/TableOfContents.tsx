@@ -21,7 +21,9 @@ function TOCNode(props: { data: TOCNode; depth: number }) {
 
 	if (typeof props.data == "string") {
 		return (
-			<Link href={`#${props.data.toLocaleLowerCase().replace(/\s/g, "-").replaceAll(".", "")}`} className="text-gray-400 block">
+			<Link
+				href={`#${props.data.toLocaleLowerCase().replace(/\s/g, "-").replaceAll(".", "")}`}
+				className="text-gray-400 block">
 				{props.data}
 			</Link>
 		);
@@ -30,7 +32,10 @@ function TOCNode(props: { data: TOCNode; depth: number }) {
 	return (
 		<div>
 			<Link
-				href={`#${props.data.title.toLocaleLowerCase().replace(/\s/g, "-").replaceAll(".", "")}`}
+				href={`#${props.data.title
+					.toLocaleLowerCase()
+					.replace(/\s/g, "-")
+					.replaceAll(".", "")}`}
 				className="text-gray-400 flex items-center">
 				{props.data.title}
 			</Link>
@@ -41,7 +46,7 @@ function TOCNode(props: { data: TOCNode; depth: number }) {
 
 export default function TableOfContents(props: { data: ArticleMetadata }) {
 	return (
-		<div className="border-l-2 border-gray-200 px-6 py-2 my-2 h-min m-8 sticky top-24">
+		<div className="border-l-2 border-gray-200 px-6 py-2 my-2 h-min m-8 sticky top-24 hidden sm:block">
 			<p className="text-gray-200 font-title font-bold mb-2 text-lg">In this article</p>
 			<ul>
 				{props.data.tableOfContents.map((node, index) => (
