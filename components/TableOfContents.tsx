@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ReactNode, SetStateAction, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { ArticleMetadata, TOCNode } from "../utils/article";
 
 function TOCNode(props: { data: TOCNode; depth: number }) {
 	const [content, setContent] = useState<ReactNode[]>([]);
-	const [expanded, setExpanded] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (props.depth > 1) return;

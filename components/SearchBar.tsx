@@ -1,13 +1,32 @@
-import { Dispatch, SetStateAction } from "react";
+import { useEffect, useState } from "react";
+
+import { useRouter } from "next/router";
 
 export default function SearchBar(props: {
 	big?: boolean;
 	placeholder?: string;
 	className?: string;
-	state?: string;
-	setState?: Dispatch<SetStateAction<string>>;
-	submit?: () => void;
+	submit?: (text: string) => void;
 }) {
+	const [text, setText] = useState("");
+	const router = useRouter();
+
+	useEffect(() => {
+		if (router.query.q && text == "") {
+			if (!router) return;
+			setText(router.query.q as string);
+		}
+	}, [router]);
+
+	function handleSubmit() {
+		if (props.submit) {
+			props.submit(text);
+			return;
+		}
+
+		router.push(`/search?q=${text}`);
+	}
+
 	return (
 		<div
 			className={`${
@@ -19,22 +38,19 @@ export default function SearchBar(props: {
 			} `}>
 			<input
 				onKeyDown={(event) => {
-					if (event.key == "Enter" && props.submit) {
-						props.submit();
+					if (event.key == "Enter") {
+						handleSubmit();
 					}
 				}}
 				type="text"
 				placeholder={props.placeholder}
-				value={props.state}
+				value={text}
 				onChange={(event) => {
-					if (props.setState) props.setState(event.target.value);
+					setText(event.target.value);
 				}}
 				className="bg-transparent h-full text-lg font-title focus:outline-none placeholder:font-bold placeholder:text-gray-600 pl-4 sm:pl-8 sm:pr-4"
 			/>
-			<button
-				onClick={() => {
-					if (props.submit) props.submit();
-				}}>
+			<button onClick={handleSubmit}>
 				<i className="bg-[url('/icons/search.svg')] filter-gray-600 icon h-8 w-8 sm:h-10 sm:w-10 block"></i>
 			</button>
 		</div>

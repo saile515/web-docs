@@ -29,7 +29,6 @@ function Article(props: { data: ArticleMetadata }) {
 }
 
 export default function Search() {
-	const [query, setQuery] = useState<string>("");
 	const [topic, setTopic] = useState<string[]>([]);
 	const [searchTime, setSearchTime] = useState<number>();
 	const [articles, setArticles] = useState<ArticleMetadata[]>();
@@ -41,19 +40,15 @@ export default function Search() {
 		if (!topic.length && router.query.t) {
 			setTopic((router.query.t as string).split(","));
 		}
-
-		if (router.query.q && query == "") {
-			setQuery(router.query.q as string);
-		}
 	}, [router]);
 
 	useEffect(() => {
 		handleSearch();
 	}, [topic]);
 
-	function handleSearch() {
+	function handleSearch(query?: string) {
 		if (router) {
-			router.query.q = query;
+			router.query.q = query || "";
 			router.query.t = topic.toString();
 			router.push(router);
 		}
@@ -74,8 +69,6 @@ export default function Search() {
 				<SearchBar
 					big
 					placeholder="Search for articles..."
-					state={query}
-					setState={setQuery}
 					submit={handleSearch}
 					className="w-full max-w-none"
 				/>
