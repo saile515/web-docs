@@ -32,7 +32,7 @@ export default function SearchBar(props: {
 			className={`${
 				props.big
 					? "w-9/12 max-w-xl sm:h-14 grid-cols-[1fr_3.5rem]"
-					: "w-32 h-8 grid-cols-[1fr_2rem]"
+					: "h-8 grid-cols-[1fr_2rem] w-6/12 max-w-sm"
 			} bg-gray-200 rounded-full shadow-inner shadow-gray-500 border-b border-gray-100 grid items-center ${
 				props.className
 			} `}>
@@ -48,10 +48,15 @@ export default function SearchBar(props: {
 				onChange={(event) => {
 					setText(event.target.value);
 				}}
-				className="bg-transparent h-full text-lg font-title focus:outline-none placeholder:font-bold placeholder:text-gray-600 pl-4 sm:pl-8 sm:pr-4"
+				className={`${
+					props.big ? "pl-4 sm:pl-8" : "pl-4"
+				} bg-transparent h-full text-lg font-title focus:outline-none placeholder:font-bold placeholder:text-gray-600 sm:pr-4 w-full`}
 			/>
 			<button onClick={handleSubmit}>
-				<i className="bg-[url('/icons/search.svg')] filter-gray-600 icon h-8 w-8 sm:h-10 sm:w-10 block"></i>
+				<i
+					className={`${
+						props.big ? "h-8 w-8 sm:h-10 sm:w-10" : "h-6 w-6"
+					} bg-[url('/icons/search.svg')] filter-gray-600 icon block`}></i>
 			</button>
 		</div>
 	);

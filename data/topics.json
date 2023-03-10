@@ -6,13 +6,53 @@
 			"color": "#9333ea",
 			"description": "Articles aimed at beginners, such as IDE setup, creating your first web page, common beginner mistakes, etc."
 		},
-		{ "name": "HTML", "id": "html", "color": "#e34c26", "description": "" },
-		{ "name": "CSS", "id": "css", "color": "#264de4", "description": "" },
-		{ "name": "JavaScript", "id": "js", "color": "#f0db4f", "description": "" },
-		{ "name": "React", "id": "react", "color": "#61dbfb", "description": "" },
-		{ "name": "NodeJS", "id": "node", "color": "#339933", "description": "" },
-		{ "name": "TailwindCSS", "id": "tw", "color": "#00b4b6", "description": "" },
-		{ "name": "MongoDB", "id": "mongo", "color": "#589636", "description": "" },
-		{ "name": "TypeScript", "id": "ts", "color": "#007acc", "description": "" }
+		{
+			"name": "HTML",
+			"id": "html",
+			"color": "#e34c26",
+			"description": "HyperText Markup Language (HTML) is the foundation of all webpages. It acts as a skeleton, creating content and semantics."
+		},
+		{
+			"name": "CSS",
+			"id": "css",
+			"color": "#264de4",
+			"description": "Cascading Style Sheets (CSS) is the styling language of the web. Its responsibilities is layout and styling."
+		},
+		{
+			"name": "JavaScript",
+			"id": "js",
+			"color": "#f0db4f",
+			"description": "JavaScript (JS) is the programming language of the web. It is one of the world's most popular programming languages."
+		},
+		{
+			"name": "React",
+			"id": "react",
+			"color": "#61dbfb",
+			"description": "React is the most widely used JavaScript framework. It allows for dynamic content and reusable components."
+		},
+		{
+			"name": "NodeJS",
+			"id": "node",
+			"color": "#339933",
+			"description": "NodeJS is a server-side JavaScript runtime. It allows developers to use JavaScript for backend applications."
+		},
+		{
+			"name": "TailwindCSS",
+			"id": "tw",
+			"color": "#00b4b6",
+			"description": "TailwindCSS is a utility CSS framework. It allows you to style elements with classnames. It also doubles as a design system."
+		},
+		{
+			"name": "MongoDB",
+			"id": "mongo",
+			"color": "#589636",
+			"description": "MongoDB is a NoSQL document database. It uses BSON (Binary JSON) to store large amounts of data effectively."
+		},
+		{
+			"name": "TypeScript",
+			"id": "ts",
+			"color": "#007acc",
+			"description": "TypeScript is a JavaScript superset that adds static types to JavaScript. It also makes it possible to use new JavaScript features on old runtimes."
+		}
 	]
 }
