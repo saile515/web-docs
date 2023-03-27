@@ -13,7 +13,7 @@ export default function Article(props: InferGetStaticPropsType<typeof getStaticP
 	const [content, setContent] = useState<string>(DOMPurify.sanitize(marked.parse(props.article)));
 
 	return (
-		<div className="bg-gray-800">
+		<div className="bg-gray-800 min-h-screen">
 			<Nav />
 			<div className="grid sm:grid-cols-[1fr_2fr_1fr] mt-12 p-12 pt-24">
 				<div></div>

@@ -1,0 +1,12 @@
+{
+	"title": "Setting up Visual Studio Code for Web Development",
+	"topic": ["web"],
+	"tableOfContents": [
+		"Introduction",
+		"Installation",
+		"Creating a project",
+		{ "title": "Extensions", "content": ["Live Server", "Prettier", "vscode-icons"] }
+	],
+	"keywords": ["VSCode", "Web Development"],
+	"slug": "setting-up-visual-studio-code-for-web-development"
+}

@@ -1,11 +1,10 @@
 #article {
-	color: #f9fafb;
+	color: #d1d5db;
+	line-height: 1.5rem;
 }
 
 #article p {
-	color: #d1d5db;
-	line-height: 1.5rem;
-	margin: 1.5rem 0;
+	margin-bottom: 1.5rem;
 }
 
 #article h1,
@@ -14,13 +13,16 @@
 #article h4,
 #article h5,
 #article h6 {
+	color: #f9fafb;
 	font-family: quicksand;
 	font-weight: 700;
+	margin: 0.5rem 0;
 }
 
 #article h1 {
 	font-size: 3rem;
 	line-height: 1;
+	margin-bottom: 2rem;
 }
 
 #article h2 {
@@ -46,6 +48,15 @@
 
 #article h6 {
 	font-weight: 400;
+}
+
+#article a {
+	color: #3b82f6;
+}
+
+#article ol {
+	list-style: decimal;
+	margin-left: 2rem;
 }
 
 @media screen and (max-width: 640px) {
