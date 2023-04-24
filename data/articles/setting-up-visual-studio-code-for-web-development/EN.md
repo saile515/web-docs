@@ -8,9 +8,34 @@ The most used IDE today is Visual Studio Code. It is a free IDE with support for
 This article will explain how to install Visual Studio Code and set it up for web development. I will also recommend some extensions that will make it easier to develop websites in VSCode.
 
 ## Installation
-1. Download [Visual Studio Code](https://code.visualstudio.com/)
-2. Run the installer
-3. Open Visual Studio Code
+Download [Visual Studio Code](https://code.visualstudio.com/) and run the installer.
+
+Select your preferred language:
+![Image 1](/images/setting-up-visual-studio-code-for-web-development/vscode-1.png)
+
+Accept the License Agreement:
+![Image 2](/images/setting-up-visual-studio-code-for-web-development/vscode-2.png)
+
+Select next:
+![Image 3](/images/setting-up-visual-studio-code-for-web-development/vscode-3.png)
+
+Select next:
+![Image 4](/images/setting-up-visual-studio-code-for-web-development/vscode-4.png)
+
+Check all boxes and select next:
+![Image 5](/images/setting-up-visual-studio-code-for-web-development/vscode-5.png)
+
+Select install:
+![Image 6](/images/setting-up-visual-studio-code-for-web-development/vscode-6.png)
+
+Wait for VSCode to install:
+![Image 7](/images/setting-up-visual-studio-code-for-web-development/vscode-7.png)
+
+Select Finish:
+![Image 8](/images/setting-up-visual-studio-code-for-web-development/vscode-8.png)
+
+Enjoy you new IDE:
+![Image 9](/images/setting-up-visual-studio-code-for-web-development/vscode-9.png)
 
 ## Creating a project
 In order to create website, you first have to have a folder to store all files in. To create a folder, select `File->Open Folder` from the top bar. Then create and open a folder in your desired location using your operating systems native GUI.
